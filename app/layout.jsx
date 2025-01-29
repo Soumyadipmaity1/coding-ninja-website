@@ -12,14 +12,14 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body className="bg-[#141819]">
-        <div className="min-h-screen flex flex-col bg-black text-white">
+        <div className="min-h-screen bg-black text-white">
           
-          <header id="home" className="sticky top-0 z-50">
+          <header id="" className="sticky top-0 z-50">
             <Navbar />
           </header>
 
-          <main className="flex-grow">
-            <div className="app">{children}</div>
+          <main className="">
+            <div className="">{children}</div>
           </main>
 
           <footer className="mt-auto">
