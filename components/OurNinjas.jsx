@@ -1,111 +1,110 @@
-'use client'
-import React from 'react'
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+"use client";
 
-const Profiles = [
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+
+const members = [
     {
-        name: 'BikramAditya Munshi',
-        img: '/bikram.jpg',
+        name: 'Bikram Aditya Munshi',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177658/bikram_dwops8.jpg",
         designation: "President",
     },
     {
         name: 'Ayush Srivastava',
-        img: '/ayush_srivastava.jpeg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738176767/ayush_srivastava_o7jyo3.jpg",
         designation: "Vice-President",
     },
     {
         name: 'Sankalp Prajapati',
-        img: '/sankalp.jpg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178165/sankalp_xj7bzn.jpg",
         designation: "PR Marketing Lead",
     },
     {
         name: 'Pracheeta Gupta',
-        img: '/pracheeta.jpg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177981/pracheeta_rienud.jpg",
         designation: "CyberSecurity Lead",
     },
     {
         name: 'Shubham Agarwal',
-        img: '/shubham.jpg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178391/shubham_saym4f.jpg",
         designation: "Administration Lead",
     },
     {
         name: 'Harsh Singh',
-        img: '/harsh.jpeg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177874/harsh_bb7qm2.jpg",
         designation: "App Dev Lead",
     },
     {
         name: 'Ayush Suman',
-        img: '/ayush_suman.jpg',
-        designation: "CP Lead ",
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177491/ayush_suman_outaqe.jpg",
+        designation: "CP Lead",
     },
     {
         name: 'Sankalp Singh',
-        img: '/sankalp_singh.jpg',
+        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178298/sankalp_singh_ohq6ec.jpg",
         designation: "Cloud Lead",
     },
-]
+];
 
-const ProfileCard = () => {
-    var settings = {
-        slidesToShow: 4,
-        slidesToScroll: 1,
-        autoplay: false, 
-        dots: true,
-        infinite: true,
-        speed: 2000,
-        initialSlide: 0,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    dots: true,
-                    autoplay: false,
-                }
-            },
-            {
-                breakpoint: 600,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    initialSlide: 2,
-                    autoplay: false,
-                }
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    autoplay: false, 
-                }
-            }
-        ]
-    };
+const NinjaSlider = () => {
+    const [current, setCurrent] = useState(0);
+
+    const nextSlide = () => setCurrent((prev) => (prev + 1) % members.length);
+    const prevSlide = () => setCurrent((prev) => (prev - 1 + members.length) % members.length);
+
     return (
-        <div className='w-3/4 h-auto m-auto '>
-            <div className=' mb-20 mt-14 '>
-                <h2 id="domain" className='  sm:text-5xl text-4xl font-bold event-title text-center mb-20 sm:mb-28'>Our Ninjas</h2>
-                <Slider {...settings}>
-                    {Profiles.map((d) => (
-                        <div className='bg-gradient-to-t from-blue-600 to-black text-white-500 h-[200px] rounded-xl '>
-                            <div className=' w-30 h-auto rounded-t-xl flex justify-center items-center'>
-                                <img className='h-20 w-20 p-1 rounded-full' src={d.img} alt={d.name}></img>
-                            </div>
-                            <div className='flex flex-col justify-center text-center items-center gap-2 p-4'>
-                                <h3 className='ninjaname'>{d.name}</h3>
-                                <p className='ninjades'>{d.designation}</p>
-                            </div>
-                        </div>
-                    ))}
-                </Slider>
+        <section className="bg-gradient-to-b from-black to-orange-900 py-12 text-white relative">
+            <div className="text-center mb-8">
+                <h2 className="sm:text-5xl text-4xl font-bold event-title text-center mb-20 sm:mb-28">
+                    Meet Our Ninjas
+                </h2>
             </div>
-        </div>
-    );
-}
 
-export default ProfileCard;
+            <div className="flex justify-center items-center relative">
+                {/* Left Button */}
+                <button
+                    onClick={prevSlide}
+                    className="absolute left-4 text-white text-3xl hover:text-orange-500 transition"
+                >
+                    <FaChevronLeft />
+                </button>
+
+                {/* Slide Container */}
+                <div className="w-80 h-auto overflow-hidden relative">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={current}
+                            initial={{ opacity: 0, x: 100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -100 }}
+                            transition={{ duration: 0.5 }}
+                            className="bg-black bg-opacity-60 p-4 rounded-xl shadow-lg border border-white"
+                        >
+                            <img
+                                src={members[current].image}
+                                alt={members[current].name}
+                                className="w-full h-64 object-cover rounded-lg -mt"
+                            />
+                            <h3 className="text-xl font-semibold mt-4">{members[current].name}</h3>
+                            
+                            <p className="text-sm text-gray-300">{members[current].designation}</p>
+                            
+                            
+                        </motion.div>
+                    </AnimatePresence>
+                </div>
+
+                {/* Right Button */}
+                <button
+                    onClick={nextSlide}
+                    className="absolute right-4 text-white text-3xl hover:text-orange-500 transition"
+                >
+                    <FaChevronRight />
+                </button>
+            </div>
+        </section>
+    );
+};
+
+export default NinjaSlider;
