@@ -26,7 +26,7 @@ const Home = () => {
         <HeroSection/>
         <RecentEvents/>
         <AboutUs/>
-        {/* <OurNinjas/> */}
+        <OurNinjas/> 
 
         <Events />
     </div>
