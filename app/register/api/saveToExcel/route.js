@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function POST(req: NextRequest) {
+export async function POST(req) {
     console.log("✅ API Route Hit!");
     try {
         const body = await req.json();
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
             fs.mkdirSync(dirPath, { recursive: true });
         }
 
-        let data: any[] = [];
+        let data = [];
         if (fs.existsSync(filePath)) {
             console.log("📄 Reading existing JSON file...");
             const fileContent = fs.readFileSync(filePath, "utf-8");
@@ -34,7 +34,7 @@ export async function POST(req: NextRequest) {
         return NextResponse.json({ message: "Data stored successfully in JSON!" });
 
     } catch (error) {
-        console.error("❌ Error saving data:", (error as Error).message);
+        console.error("❌ Error saving data:", error.message);
         return NextResponse.json({ error: "Failed to save data" }, { status: 500 });
     }
 }
