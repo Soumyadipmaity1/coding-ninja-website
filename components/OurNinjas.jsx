@@ -6,44 +6,40 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const members = [
     {
-        name: 'Bikram Aditya Munshi',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177658/bikram_dwops8.jpg",
+        name: 'Ayush Srivastava',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742151647/WhatsApp_Image_2024-02-01_at_22.09.08_ef0jcp.jpg",
         designation: "President",
     },
     {
-        name: 'Ayush Srivastava',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738176767/ayush_srivastava_o7jyo3.jpg",
+        name: 'Rahul Lenka',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742129452/pfp_-_316_RAHUL_LENKA_jj0hg4.jpg",
         designation: "Vice-President",
     },
     {
-        name: 'Sankalp Prajapati',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178165/sankalp_xj7bzn.jpg",
-        designation: "PR Marketing Lead",
+        name: 'Krishh Chopra',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742142356/profile_pic_-_Krrish_Chopra_1_zbjgvd.jpg",
+        designation: "Design & Branding Lead",
     },
     {
-        name: 'Pracheeta Gupta',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177981/pracheeta_rienud.jpg",
-        designation: "CyberSecurity Lead",
+        name: 'Arghajit Acharjee',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/e_improve,w_300,h_600,c_thumb,g_auto/v1742145762/IMG_4665_unbbjh.jpg",
+        designation: "Content Lead",
     },
+    
     {
-        name: 'Shubham Agarwal',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178391/shubham_saym4f.jpg",
-        designation: "Administration Lead",
-    },
-    {
-        name: 'Harsh Singh',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177874/harsh_bb7qm2.jpg",
-        designation: "App Dev Lead",
-    },
-    {
-        name: 'Ayush Suman',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738177491/ayush_suman_outaqe.jpg",
-        designation: "CP Lead",
-    },
-    {
-        name: 'Sankalp Singh',
-        image: "https://res.cloudinary.com/dsuxecz0u/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1738178298/sankalp_singh_ohq6ec.jpg",
+        name: 'Ankush Saini',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742152483/ankush_saini_xcin7n.jpg",
         designation: "Cloud Lead",
+    },
+    {
+        name: 'Ayush Lohia',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742137862/photo_-_AYUSH_LOHIA_1_sxot0n.jpg",
+        designation: "Marketing & PR Lead",
+    },
+    {
+        name: 'Ojanshu Pati Tripathi',
+        image: "https://res.cloudinary.com/dz2znn1tn/image/upload/v1742135022/oj_e8edq3.jpg",
+        designation: "Web Dev Lead",
     },
 ];
 
