@@ -93,7 +93,7 @@ export default function HeroSection() {
           whileTap={{ scale: 0.95 }}
         >
           <a
-            href="#join-us"
+            href="/register/metron"
             className="bg-orange-500 text-black font-bold text-base sm:text-lg py-3 px-6 sm:py-4 sm:px-8 rounded-full inline-flex items-center transition-all duration-300 ease-in-out hover:bg-orange-600"
           >
             <span className="mr-2">Join Now</span>
