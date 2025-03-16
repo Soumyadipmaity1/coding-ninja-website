@@ -1,12 +1,11 @@
 import React from 'react'
-import RegistrationForm from '@components/RegistrationForm'
 
-function RegisterPage() {
+function page() {
   return (
     <div>
-<RegistrationForm />
+        <h1>Register</h1>
     </div>
   )
 }
 
-export default RegisterPage
+export default page
