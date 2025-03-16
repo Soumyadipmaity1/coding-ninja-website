@@ -47,11 +47,12 @@ const Navbar = () => {
         </Link>
 
         <div className="hidden lg:flex justify-center flex-1 space-x-4 nav-items">
-          <NavItem href="#home" text="Home" />
-          <NavItem href="#about-us" text="About Us" />
-          <NavItem href="#domain" text="Domain" />
-          <NavItem href="#events" text="Events" />
-          <NavItem href="#contact" text="Contact us" />
+          <NavItem href="/" text="Home" />
+          <NavItem href="/" text="About Us" />
+          <NavItem href="/" text="Domain" />
+          <NavItem href="/" text="Events" />
+          {/* <NavItem href="/" text="Contact us" / */}
+          <NavItem href="/register/metron" text="Register" />
         </div>
 
         <div className="lg:hidden flex items-center">
@@ -63,11 +64,11 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="lg:hidden flex flex-col items-center absolute top-[80px] left-0 right-0 bg-[#141819] bg-opacity-60 blur-nav z-10 py-4">
-          <NavItem href="#home" text="Home" />
-          <NavItem href="#about-us" text="About Us" />
-          <NavItem href="#domain" text="Domain" />
-          <NavItem href="#events" text="Events" />
-          <NavItem href="#contact" text="Contact us" />
+          <NavItem href="/" text="Home" />
+          <NavItem href="/" text="About Us" />
+          <NavItem href="/" text="Domain" />
+          <NavItem href="/" text="Events" />
+          <NavItem href="/" text="Register" />
         </div>
       )}
     </nav>
