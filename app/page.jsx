@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import Events from "@components/Events/Events"
 import Popup from "@components/Popup";
 import AboutUs from '@components/AboutUs';
-import RecentEvents from '@components/Events/RecentEvents';
+// import RecentEvents from '@components/Events/RecentEvents';
 import OurNinjas from '@components/OurNinjas'
 import HeroSection from '@components/Hersection';
 
@@ -24,7 +24,7 @@ const Home = () => {
     <div className="w-full text-white">
         {/* <Popup isOpen={isModalOpen} onClose={closeModal} /> */}
         <HeroSection/>
-        <RecentEvents/>
+        {/* <RecentEvents/> */}
         <AboutUs/>
         <OurNinjas/> 
 
