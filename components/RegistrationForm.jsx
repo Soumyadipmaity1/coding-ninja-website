@@ -21,7 +21,7 @@ export default function RegistrationForm() {
         e.preventDefault();
 
         try {
-            const response = await fetch("/api/saveToExcel", {
+            const response = await fetch("/register/api/saveToExcel", { // ✅ Corrected API Path
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),
@@ -38,8 +38,16 @@ export default function RegistrationForm() {
             console.log("API Response:", result);
             alert("Data saved successfully!");
 
-            // ✅ Redirect page (Refresh)
-            window.location.href = window.location.href;
+            // ✅ Reset Form
+            setFormData({
+                name: "",
+                roll: "",
+                email: "",
+                contact: "",
+                branch: "",
+                suggestion: "",
+                question: "",
+            });
 
         } catch (error) {
             console.error("Fetch Error:", error);
@@ -59,6 +67,7 @@ export default function RegistrationForm() {
                                 type="text" 
                                 name="name" 
                                 placeholder="Name" 
+                                value={formData.name}
                                 onChange={handleChange}
                                 required 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -70,6 +79,7 @@ export default function RegistrationForm() {
                                 type="text" 
                                 name="roll" 
                                 placeholder="Roll No" 
+                                value={formData.roll}
                                 onChange={handleChange}
                                 required 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -81,6 +91,7 @@ export default function RegistrationForm() {
                                 type="email" 
                                 name="email" 
                                 placeholder="Email" 
+                                value={formData.email}
                                 onChange={handleChange}
                                 required 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -92,6 +103,7 @@ export default function RegistrationForm() {
                                 type="tel" 
                                 name="contact" 
                                 placeholder="Contact" 
+                                value={formData.contact}
                                 onChange={handleChange}
                                 required 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -101,6 +113,7 @@ export default function RegistrationForm() {
                         <div className="space-y-2">
                             <select 
                                 name="branch" 
+                                value={formData.branch}
                                 onChange={handleChange} 
                                 required
                                 className="w-full bg-gray-800/50 text-white rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
@@ -118,6 +131,7 @@ export default function RegistrationForm() {
                             <textarea 
                                 name="suggestion" 
                                 placeholder="Suggestion" 
+                                value={formData.suggestion}
                                 onChange={handleChange} 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all h-20 resize-none"
                             ></textarea>
@@ -127,6 +141,7 @@ export default function RegistrationForm() {
                             <textarea 
                                 name="question" 
                                 placeholder="Any Question?" 
+                                value={formData.question}
                                 onChange={handleChange} 
                                 className="w-full bg-gray-800/50 text-white placeholder:text-gray-400 rounded-lg px-4 py-3 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all h-20 resize-none"
                             ></textarea>
