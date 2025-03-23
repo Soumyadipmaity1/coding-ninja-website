@@ -215,7 +215,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div className='flex h-screen justify-center items-center text-6xl text-orange-500 font-mono'>
+    <div className='flex h-screen justify-center text-center items-center sm:text-6xl text-3xl text-orange-500 font-mono'>
       Registration Closed 
     </div>
   )
